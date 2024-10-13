@@ -1,0 +1,21 @@
+[package]
+name = "wiktionary-authors"
+version = "0.1.0"
+edition = "2021"
+
+# for instrumenting with samply
+[profile.release]
+debug = true
+
+[features]
+python-diff = [ "wikiwho/python-diff" ]
+
+[dependencies]
+byte-unit = "5.1.4"
+clap = { version = "4.5.20", features = ["derive"] }
+crossbeam-channel = "0.5.13"
+json-writer = "0.4.0"
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+wikiwho = { version = "0.1.0", path = "../wikiwho_rs", features = ["optimized-str"] }
+zstd = "0.13.2"
